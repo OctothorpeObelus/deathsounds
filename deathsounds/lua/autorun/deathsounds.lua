@@ -3,24 +3,9 @@ function DeathSounds(victim, weapon, killer)
 
 	local model = victim:GetModel()
 	local maxrand = 0
-	local soundrand = math.random(3,59)
-	local suffix = ".wav"
-	local sound = "deathsound/death" .. soundrand .. suffix
+	local soundrand = math.random(1,59) --Change this 59 to the largest number in your sounds folder Ex. death68.wav would be local soundrand = math.random(1,68)
+	local sound = "deathsound/death" .. soundrand .. ".wav"
 	
-	if soundrand < 15 then
-		suffix = ".wav"
-	elseif soundrand > 14 and soundrand < 17 then
-		suffix = ".mp3"
-	elseif soundrand == 17 then
-		suffix = ".wav"
-	elseif soundrand > 17 and soundrand < 40 then
-		suffix = ".mp3"
-	elseif soundrand > 39 and soundrand < 48 then
-		suffix = ".wav"
-	elseif soundrand > 48 then
-		suffix = ".mp3"
-	end
-	local sound = "deathsound/death" .. soundrand .. suffix
 	util.PrecacheSound(sound)
 	victim:EmitSound(sound, 72, 100)
 end
