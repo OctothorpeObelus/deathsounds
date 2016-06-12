@@ -1,0 +1,11 @@
+{
+	"title"		:	"Random Death Sounds",
+	"type"		:	"effects",
+	"tags"		:	[ "fun", "cartoon" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*"
+	]
+}
