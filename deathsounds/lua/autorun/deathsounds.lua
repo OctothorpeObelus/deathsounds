@@ -1,9 +1,7 @@
---Add our own sounds
+--Add your own sounds in sound/deathsounds
 function DeathSounds(victim, weapon, killer)
-
-	local model = victim:GetModel()
-	local maxrand = 0
-	local soundrand = math.random(1,59) --Change this 59 to the largest number in your sounds folder Ex. death68.wav would be local soundrand = math.random(1,68)
+	local maxrand = 0 --Change this 59 to the largest number in your sounds folder Ex. death68.wav would be 68
+	local soundrand = math.random(1,maxrand)
 	local sound = "deathsound/death" .. soundrand .. ".wav"
 	
 	util.PrecacheSound(sound)
@@ -11,7 +9,7 @@ function DeathSounds(victim, weapon, killer)
 end
 hook.Add( "PlayerDeath", "DeathSoundsHook", DeathSounds )
 
---Remove the annoying flatline noise
+-- Don't change anything down here
 function RemoveFlatline()
 return true
 end
